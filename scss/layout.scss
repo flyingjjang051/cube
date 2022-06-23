@@ -74,34 +74,40 @@ $cube-width: 400px;
         //border: 1px solid #000;
       }
       .front {
-        background-color: nth($colors, 1);
-        @include longShadow(darken(nth($colors, 1), 10), 210);
+        //background-color: nth($colors, 1);
+        //@include longShadow(darken(nth($colors, 1), 10), 210);
         transform: rotateY(0) translateZ($cube-width/2);
       }
       .back {
-        background-color: nth($colors, 2);
-        @include longShadow(darken(nth($colors, 2), 10), 210);
+        //background-color: nth($colors, 2);
+        //@include longShadow(darken(nth($colors, 2), 10), 210);
         transform: rotateY(180deg) translateZ($cube-width/2);
       }
       .top {
-        background-color: nth($colors, 3);
-        @include longShadow(darken(nth($colors, 3), 10), 210);
+        //background-color: nth($colors, 3);
+        //@include longShadow(darken(nth($colors, 3), 10), 210);
         transform: rotateX(90deg) translateZ($cube-width/2);
       }
       .bottom {
-        background-color: nth($colors, 4);
-        @include longShadow(darken(nth($colors, 4), 10), 210);
+        //background-color: nth($colors, 4);
+        //@include longShadow(darken(nth($colors, 4), 10), 210);
         transform: rotateX(-90deg) translateZ($cube-width/2);
       }
       .left {
-        background-color: nth($colors, 5);
-        @include longShadow(darken(nth($colors, 5), 10), 210);
+        //background-color: nth($colors, 5);
+        //@include longShadow(darken(nth($colors, 5), 10), 210);
         transform: rotateY(-90deg) translateZ($cube-width/2);
       }
       .right {
-        background-color: nth($colors, 6);
-        @include longShadow(darken(nth($colors, 6), 10), 210);
+        //background-color: nth($colors, 6);
+        //@include longShadow(darken(nth($colors, 6), 10), 210);
         transform: rotateY(90deg) translateZ($cube-width/2);
+      }
+      @for $i from 1 through length($colors) {
+        .face:nth-child(#{$i}) {
+          background-color: nth($colors, $i);
+          @include longShadow(darken(nth($colors, $i), 10), 210);
+        }
       }
     }
   }
@@ -152,11 +158,17 @@ $cube-width: 400px;
     // }
   }
 
-  @each $color in $colors {
-    $index: index($colors, $color);
-    button:nth-child(#{$index}).on {
-      background-color: $color;
-      @include longShadow(darken($color, 10), 30);
+  // @each $color in $colors {
+  //   $index: index($colors, $color);
+  //   button:nth-child(#{$index}).on {
+  //     background-color: $color;
+  //     @include longShadow(darken($color, 10), 30);
+  //   }
+  // }
+  @for $i from 1 through length($colors) {
+    button:nth-child(#{$i}).on {
+      background-color: nth($colors, $i);
+      @include longShadow(darken(nth($colors, $i), 10), 30);
     }
   }
 }
