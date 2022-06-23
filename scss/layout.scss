@@ -126,29 +126,37 @@ $cube-width: 400px;
     background-color: #111;
     color: #fff;
     overflow: hidden;
-    &:nth-child(1).on {
-      background-color: nth($colors, 1);
-      @include longShadow(darken(nth($colors, 1), 10), 30);
-    }
-    &:nth-child(2).on {
-      background-color: nth($colors, 2);
-      @include longShadow(darken(nth($colors, 2), 10), 30);
-    }
-    &:nth-child(3).on {
-      background-color: nth($colors, 3);
-      @include longShadow(darken(nth($colors, 3), 10), 30);
-    }
-    &:nth-child(4).on {
-      background-color: nth($colors, 4);
-      @include longShadow(darken(nth($colors, 4), 10), 30);
-    }
-    &:nth-child(5).on {
-      background-color: nth($colors, 5);
-      @include longShadow(darken(nth($colors, 5), 10), 30);
-    }
-    &:nth-child(6).on {
-      background-color: nth($colors, 6);
-      @include longShadow(darken(nth($colors, 6), 10), 30);
+    // &:nth-child(1).on {
+    //   background-color: nth($colors, 1);
+    //   @include longShadow(darken(nth($colors, 1), 10), 30);
+    // }
+    // &:nth-child(2).on {
+    //   background-color: nth($colors, 2);
+    //   @include longShadow(darken(nth($colors, 2), 10), 30);
+    // }
+    // &:nth-child(3).on {
+    //   background-color: nth($colors, 3);
+    //   @include longShadow(darken(nth($colors, 3), 10), 30);
+    // }
+    // &:nth-child(4).on {
+    //   background-color: nth($colors, 4);
+    //   @include longShadow(darken(nth($colors, 4), 10), 30);
+    // }
+    // &:nth-child(5).on {
+    //   background-color: nth($colors, 5);
+    //   @include longShadow(darken(nth($colors, 5), 10), 30);
+    // }
+    // &:nth-child(6).on {
+    //   background-color: nth($colors, 6);
+    //   @include longShadow(darken(nth($colors, 6), 10), 30);
+    // }
+  }
+
+  @each $color in $colors {
+    $index: index($colors, $color);
+    button:nth-child(#{$index}).on {
+      background-color: $color;
+      @include longShadow(darken($color, 10), 30);
     }
   }
 }
