@@ -33,7 +33,10 @@
           <li>section10</li>
         </ul>
       </div>
-      <div class="btns"></div>
+      <div class="btns">
+        <button class="btn prev"><span class="material-icons"> chevron_left </span></button>
+        <button class="btn next"><span class="material-icons"> chevron_right </span></button>
+      </div>
     </main>
   </body>
   <script>
@@ -42,6 +45,18 @@
     let w = $(window).width();
     let angle = 360 / 10;
     let ty = 0;
+    const prev = $(".btns .prev");
+    const next = $(".btns .next");
+
+    prev.on("click", function () {
+      ty -= angle;
+      gsap.to(".list", { rotateY: ty });
+    });
+    next.on("click", function () {
+      ty += angle;
+      gsap.to(".list", { rotateY: ty });
+    });
+
     $(window).on("mousewheel", function (e) {
       //console.log(e.originalEvent.deltaY);
       // if (e.originalEvent.deltaY > 0) {
@@ -58,11 +73,15 @@
     //   const mouseX = w / 2 - e.pageX;
     //   gsap.to(".list", { rotateY: mouseX });
     // });
-    // let mouseX = 0;
 
-    // setInterval(function () {
-    //   mouseX -= 1;
+    // let mouseX = 0;
+    // let idx = setInterval(function () {
+    //   mouseX -= 0.5;
     //   gsap.to(".list", { rotateY: mouseX });
     // }, 50);
+    // $(".list").on("mouseenter", function () {
+    //   console.log("aaaa");
+    //   clearInterval(idx);
+    // });
   </script>
 </html>
