@@ -38,6 +38,31 @@
   </body>
   <script>
     // 밑변    1000
-    console.log(1000 / 2 / Math.tan(Math.PI / 10));
+    //console.log(1000 / 2 / Math.tan(Math.PI / 10));
+    let w = $(window).width();
+    let angle = 360 / 10;
+    let ty = 0;
+    $(window).on("mousewheel", function (e) {
+      //console.log(e.originalEvent.deltaY);
+      // if (e.originalEvent.deltaY > 0) {
+      //   ty += angle;
+      // } else {
+      //   ty -= angle;
+      // }
+      e.originalEvent.deltaY > 0 ? (ty += angle) : (ty -= angle);
+      gsap.to(".list", { rotateY: ty });
+    });
+
+    // $(window).on("mousemove", function (e) {
+    //   //console.log(e.pageX);
+    //   const mouseX = w / 2 - e.pageX;
+    //   gsap.to(".list", { rotateY: mouseX });
+    // });
+    // let mouseX = 0;
+
+    // setInterval(function () {
+    //   mouseX -= 1;
+    //   gsap.to(".list", { rotateY: mouseX });
+    // }, 50);
   </script>
 </html>
