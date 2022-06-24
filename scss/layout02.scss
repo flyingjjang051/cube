@@ -41,7 +41,8 @@ a {
     }
   }
 }
-$cube-width: 400px;
+$cube-width: 1000px;
+$cube-height: 450px;
 #main {
   display: flex;
   justify-content: center;
@@ -50,64 +51,33 @@ $cube-width: 400px;
   width: 100vw;
   .scene {
     width: $cube-width;
-    height: $cube-width;
+    height: $cube-height;
     perspective: 1000px;
-    .cube {
+    .list {
       position: relative;
       width: 100%;
       height: 100%;
       transform-style: preserve-3d;
-      //transform: translateZ(-$cube-width/2) rotateX(0) rotateY(0);
-      .face {
+      transform: translateZ(-1538px) rotateY(0deg) rotateX(-4deg);
+      > li {
         position: absolute;
         width: 100%;
         height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: $cube-width / 8;
+        font-size: 48px;
         text-transform: uppercase;
         color: #fff;
         font-weight: 700;
         overflow: hidden;
         user-select: none;
-        //border: 1px solid #000;
-      }
-      .front {
-        //background-color: nth($colors, 1);
-        //@include longShadow(darken(nth($colors, 1), 10), 210);
-        transform: rotateY(0) translateZ($cube-width/2);
-      }
-      .back {
-        //background-color: nth($colors, 2);
-        //@include longShadow(darken(nth($colors, 2), 10), 210);
-        transform: rotateY(180deg) translateZ($cube-width/2);
-      }
-      .top {
-        //background-color: nth($colors, 3);
-        //@include longShadow(darken(nth($colors, 3), 10), 210);
-        transform: rotateX(90deg) translateZ($cube-width/2);
-      }
-      .bottom {
-        //background-color: nth($colors, 4);
-        //@include longShadow(darken(nth($colors, 4), 10), 210);
-        transform: rotateX(-90deg) translateZ($cube-width/2);
-      }
-      .left {
-        //background-color: nth($colors, 5);
-        //@include longShadow(darken(nth($colors, 5), 10), 210);
-        transform: rotateY(-90deg) translateZ($cube-width/2);
-      }
-      .right {
-        //background-color: nth($colors, 6);
-        //@include longShadow(darken(nth($colors, 6), 10), 210);
-        transform: rotateY(90deg) translateZ($cube-width/2);
-      }
-      @for $i from 1 through length($colors) {
-        .face:nth-child(#{$i}) {
-          background-color: nth($colors, $i);
-          @include longShadow(darken(nth($colors, $i), 10), 210);
-          box-shadow: inset 0 0 20px 10px darken(nth($colors, $i), 10);
+        $total: 10;
+        @for $i from 1 through $total {
+          &:nth-child(#{$i}) {
+            background-color: rgba(nth($colors, $i % length($colors) + 1), 0.5);
+            transform: rotateY(360deg / $total * ($i - 1)) translateZ(1538px);
+          }
         }
       }
     }
