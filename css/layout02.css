@@ -67,43 +67,43 @@ a {
 }
 #main .scene .list > li:nth-child(1) {
   background-color: rgba(26, 224, 0, 0.5);
-  transform: rotateY(0deg) translateZ(1538px);
+  transform: rotateY(0deg) translateZ(-1538px);
 }
 #main .scene .list > li:nth-child(2) {
   background-color: rgba(5, 147, 212, 0.5);
-  transform: rotateY(36deg) translateZ(1538px);
+  transform: rotateY(36deg) translateZ(-1538px);
 }
 #main .scene .list > li:nth-child(3) {
   background-color: rgba(156, 6, 216, 0.5);
-  transform: rotateY(72deg) translateZ(1538px);
+  transform: rotateY(72deg) translateZ(-1538px);
 }
 #main .scene .list > li:nth-child(4) {
   background-color: rgba(206, 24, 39, 0.5);
-  transform: rotateY(108deg) translateZ(1538px);
+  transform: rotateY(108deg) translateZ(-1538px);
 }
 #main .scene .list > li:nth-child(5) {
   background-color: rgba(138, 51, 1, 0.5);
-  transform: rotateY(144deg) translateZ(1538px);
+  transform: rotateY(144deg) translateZ(-1538px);
 }
 #main .scene .list > li:nth-child(6) {
   background-color: rgba(228, 121, 0, 0.5);
-  transform: rotateY(180deg) translateZ(1538px);
+  transform: rotateY(180deg) translateZ(-1538px);
 }
 #main .scene .list > li:nth-child(7) {
   background-color: rgba(26, 224, 0, 0.5);
-  transform: rotateY(216deg) translateZ(1538px);
+  transform: rotateY(216deg) translateZ(-1538px);
 }
 #main .scene .list > li:nth-child(8) {
   background-color: rgba(5, 147, 212, 0.5);
-  transform: rotateY(252deg) translateZ(1538px);
+  transform: rotateY(252deg) translateZ(-1538px);
 }
 #main .scene .list > li:nth-child(9) {
   background-color: rgba(156, 6, 216, 0.5);
-  transform: rotateY(288deg) translateZ(1538px);
+  transform: rotateY(288deg) translateZ(-1538px);
 }
 #main .scene .list > li:nth-child(10) {
   background-color: rgba(206, 24, 39, 0.5);
-  transform: rotateY(324deg) translateZ(1538px);
+  transform: rotateY(324deg) translateZ(-1538px);
 }
 
 .btns {

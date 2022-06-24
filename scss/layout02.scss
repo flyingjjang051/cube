@@ -76,7 +76,7 @@ $cube-height: 450px;
         @for $i from 1 through $total {
           &:nth-child(#{$i}) {
             background-color: rgba(nth($colors, $i % length($colors) + 1), 0.5);
-            transform: rotateY(360deg / $total * ($i - 1)) translateZ(1538px);
+            transform: rotateY(360deg / $total * ($i - 1)) translateZ(-1538px);
           }
         }
       }

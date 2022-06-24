@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    <link rel="stylesheet" href="css/layout02.css" />
+    <link rel="stylesheet" href="css/sin.css" />
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/greensock/gsap.min.js"></script>
   </head>
@@ -19,25 +19,30 @@
       <h1><strong>CUBE</strong></h1>
     </header>
     <main id="main">
-      <div class="scene">
-        <ul class="list">
-          <li>section01</li>
-          <li>section02</li>
-          <li>section03</li>
-          <li>section04</li>
-          <li>section05</li>
-          <li>section06</li>
-          <li>section07</li>
-          <li>section08</li>
-          <li>section09</li>
-          <li>section10</li>
-        </ul>
-      </div>
-      <div class="btns"></div>
+      <ul class="list">
+        <li>01</li>
+        <li>01</li>
+        <li>01</li>
+        <li>01</li>
+        <li>01</li>
+        <li>01</li>
+        <li>01</li>
+        <li>01</li>
+        <li>01</li>
+        <li>01</li>
+      </ul>
     </main>
   </body>
   <script>
-    // 밑변    1000
-    console.log(1000 / 2 / Math.tan(Math.PI / 10));
+    const red = $(".list li");
+    let t = 0;
+    //forEach(item,idx) {}
+    red.each(function (idx, item) {
+      gsap.set($(item), { x: Math.sin((idx / 10) * 6.24) * 800, y: Math.cos((idx / 10) * 6.24) * 200 });
+    });
+    // setInterval(function () {
+    //   t += 0.1;
+    //   gsap.set(red, { x: Math.sin(t) * 300, scale: Math.cos(t) * 0.5 + 1 });
+    // }, 50);
   </script>
 </html>
